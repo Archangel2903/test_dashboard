@@ -1,11 +1,92 @@
 /*************************************************
 ********************* HEADER *********************
 *************************************************/
-header.header {
-  order: 1;
-  -webkit-order: 1;
+header {
+  &.header {
+    order: 1;
+    -webkit-order: 1;
+    position: relative;
+    min-width: 320px;
+    width: 100%;
+    z-index: 100;
+  }
+}
+
+header {
   position: relative;
-  min-width: 320px;
-  width: 100%;
-  z-index: 100;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0 0 50px;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 0;
+  margin-left: auto;
+  overflow: hidden;
+  outline: none !important;
+  z-index: 1;
+
+  &::before, &::after, span {
+    content: '';
+    width: 66%;
+    height: 2px;
+    background: #333333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $transition-base;
+  }
+
+  &::before {
+    top: 8px;
+  }
+  &::after {
+    top: auto;
+    bottom: 6px;
+  }
+
+  &.active {
+    span {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &::before {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      animation: fromTop .75s ease 0s alternate;
+    }
+    &::after {
+      bottom: 50%;
+      transform: translate(-50%, 50%) rotate(45deg);
+      animation: fromBottom .75s ease 0s alternate;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) {}
+
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 1280px) {
+  .hamburger-menu {
+    display: none;
+  }
 }

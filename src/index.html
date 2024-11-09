@@ -9,102 +9,205 @@
 <body>
 <!-- BODY -->
 <div class="main-wrapper">
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container bg-light">
-            <h1>Header Title</h1>
-        </div>
-    </header>
-    <!-- HEADER END -->
-
     <!-- CONTENT -->
-    <main class="content">
-        <div class="section">
-            <div class="container">
-                <h2>Section Slider</h2>
+    <div class="main-content">
+        <aside class="sidebar">
+            <div class="logo">
+                <svg>
+                    <use xlink:href="./img/spritemap.svg#sprite-logo"></use>
+                </svg>
+                <h2>Dashboard<span>v.01</span></h2>
+            </div>
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__list-item"><a href="#" class="menu__link">
+                        <svg class="menu__link-ico"><use xlink:href="./img/spritemap.svg#sprite-key"></use></svg>
+                        Dashboard
+                    </a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__link">
+                        <svg class="menu__link-ico"><use xlink:href="./img/spritemap.svg#sprite-3d"></use></svg>
+                        Product
+                        <svg class="menu__link-ico menu__link-ico_arrow"><use xlink:href="./img/spritemap.svg#sprite-chevron-right"></use></svg>
+                    </a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__link">
+                        <svg class="menu__link-ico"><use xlink:href="./img/spritemap.svg#sprite-user"></use></svg>
+                        Customers
+                        <svg class="menu__link-ico menu__link-ico_arrow"><use xlink:href="./img/spritemap.svg#sprite-chevron-right"></use></svg>
+                    </a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__link">
+                        <svg class="menu__link-ico"><use xlink:href="./img/spritemap.svg#sprite-wallet"></use></svg>
+                        Income
+                        <svg class="menu__link-ico menu__link-ico_arrow"><use xlink:href="./img/spritemap.svg#sprite-chevron-right"></use></svg>
+                    </a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__link">
+                        <svg class="menu__link-ico"><use xlink:href="./img/spritemap.svg#sprite-discount"></use></svg>
+                        Promote
+                        <svg class="menu__link-ico menu__link-ico_arrow"><use xlink:href="./img/spritemap.svg#sprite-chevron-right"></use></svg>
+                    </a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__link">
+                        <svg class="menu__link-ico"><use xlink:href="./img/spritemap.svg#sprite-message"></use></svg>
+                        Help
+                        <svg class="menu__link-ico menu__link-ico_arrow"><use xlink:href="./img/spritemap.svg#sprite-chevron-right"></use></svg>
+                    </a></li>
+                </ul>
+            </nav>
 
-                <div class="main-slider swiper-container">
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
+            <div class="user-card">
+                <picture class="user-card__pic">
+                    <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/user_photo.png') %>" alt="" title="">
+                </picture>
+                <div class="user-card__info">
+                    <span class="user-card__name">Evano</span>
+                    <span class="user-card__role">Project Manager</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1 class="header-title">Hello Evano <span>👋</span></h1>
+                <button type="button" class="hamburger-menu">
+                    <span></span>
+                </button>
+            </header>
+
+            <section class="section section-customer">
+                <div class="customer-list">
+                    <div class="customer-list-head">
+                        <div class="customer-list-head__info">
+                            <h2 class="customer-list-head__title">All Customers</h2>
+                            <p class="customer-list-head__sub-title">Active Members</p>
                         </div>
 
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="example" title="example">
-                            </picture>
+                        <!-- Search Bar -->
+                        <div class="customer-list-head__search-bar">
+                            <svg><use xlink:href="./img/spritemap.svg#sprite-search"></use></svg>
+                            <input type="search" placeholder="Search"/>
                         </div>
                     </div>
 
-                    <div class="swiper-pagination"></div>
+                    <div class="customer-list-table">
+                        <div class="customer-list-table__head">
+                            <p class="customer-list-table__col-name">Customer Name</p>
+                            <p class="customer-list-table__col-name">Company</p>
+                            <p class="customer-list-table__col-name">Phone Number</p>
+                            <p class="customer-list-table__col-name">Email</p>
+                            <p class="customer-list-table__col-name">Country</p>
+                            <p class="customer-list-table__col-name">Status</p>
+                        </div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Jane Cooper</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Microsoft</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(225) 555-0118</p>
+                            <p class="customer-list-table__row-text" data-label="Email">jane@microsoft.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">United States</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status active">Active</span>
+                            </p>
+                        </div>
 
-                    <!--<div class="swiper-scrollbar"></div>-->
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Floyd Miles</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Yahoo</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(205) 555-0100</p>
+                            <p class="customer-list-table__row-text" data-label="Email">floyd@yahoo.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">Kiribati</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status inactive">Inactive</span>
+                            </p>
+                        </div>
+
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Ronald Richards</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Adobe</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(302) 555-0107</p>
+                            <p class="customer-list-table__row-text" data-label="Email">ronald@adobe.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">Israel</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status inactive">Inactive</span>
+                            </p>
+                        </div>
+
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Marvin McKinney</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Tesla</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(252) 555-0126</p>
+                            <p class="customer-list-table__row-text" data-label="Email">marvin@tesla.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">Iran</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status active">Active</span>
+                            </p>
+                        </div>
+
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Jerome Bell</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Google</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(629) 555-0129</p>
+                            <p class="customer-list-table__row-text" data-label="Email">jerome@google.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">Réunion</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status active">Active</span>
+                            </p>
+                        </div>
+
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Kathryn Murphy</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Microsoft</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(406) 555-0120</p>
+                            <p class="customer-list-table__row-text" data-label="Email">kathryn@microsoft.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">Curaçao</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status active">Active</span>
+                            </p>
+                        </div>
+
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Jacob Jones</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Yahoo</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(208) 555-0112</p>
+                            <p class="customer-list-table__row-text" data-label="Email">jacob@yahoo.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">Brazil</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status active">Active</span>
+                            </p>
+                        </div>
+
+                        <div class="customer-list-table__row">
+                            <p class="customer-list-table__row-text" data-label="Customer Name">Kristin Watson</p>
+                            <p class="customer-list-table__row-text" data-label="Company">Facebook</p>
+                            <p class="customer-list-table__row-text" data-label="Phone Number">(704) 555-0127</p>
+                            <p class="customer-list-table__row-text" data-label="Email">kristin@facebook.com</p>
+                            <p class="customer-list-table__row-text" data-label="Country">Åland Islands</p>
+                            <p class="customer-list-table__row-text" data-label="Status">
+                                <span class="status inactive">Inactive</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="customer-list__footer">
+                        <div class="pagination">
+                            <span class="pagination__text">Showing data 1 to 8 of 256K entries</span>
+
+                            <div class="pagination__nav">
+                                <a href="#" class="pagination__nav-button"><</a>
+                                <a href="#" class="pagination__nav-button active">1</a>
+                                <a href="#" class="pagination__nav-button">2</a>
+                                <a href="#" class="pagination__nav-button">3</a>
+                                <a href="#" class="pagination__nav-button">4</a>
+                                <span class="pagination__nav-button pagination__nav-button_separate">...</span>
+                                <a href="#" class="pagination__nav-button">40</a>
+                                <a href="#" class="pagination__nav-button">></a>
+                                <!-- Add more pages as needed -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="container">
-                <h2>Section Pictures</h2>
-                <picture>
-                    <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/placeholder-img.jpg') %>" alt="loader" title="loader">
-                </picture>
-
-                <svg>
-                    <use xlink:href="img/spritemap.svg#sprite-ok"></use>
-                </svg>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="container">
-                <h2>Section Range slider</h2>
-
-                <div class="slider-range"><input type="range" value="75" min="1" max="100"></div>
-                <div class="slider-range"><input type="range" value="275" max="1000"></div>
-                <div class="slider-range"><input type="range"></div>
-
-                <br>
-
-                <div class="slider-handles"><input type="range" min="2000" max="10000"></div>
-                <div class="slider-handles"><input type="range" max="1000"></div>
-                <div class="slider-handles"><input type="range"></div>
-            </div>
-        </div>
-    </main>
+            </section>
+        </main>
+    </div>
     <!-- CONTENT END -->
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container bg-info">
-            <h3 class="m-0">Footer Title</h3>
-        </div>
-    </footer>
-    <!-- FOOTER END -->
 </div>
 
 <div class="preload-wrapper">
